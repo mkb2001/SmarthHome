@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="title">My SmartHome</item>
+    </style>
+    <style name="MyTheme" parent="@style/Theme.AppCompat">
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
+</resources>

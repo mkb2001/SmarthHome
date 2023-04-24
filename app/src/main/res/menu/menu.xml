@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_favourites"
+        android:icon="@drawable/ic_baseline_star_24"
+        android:title="Favourites"/>
+
+    <item
+        android:id="@+id/nav_things"
+        android:icon="@drawable/ic_things1"
+        android:title="Things"/>
+    <item
+        android:id="@+id/nav_routines"
+        android:icon="@drawable/baseline_settings_backup_restore_black_24dp"
+        android:title="Routines"/>
+    <item
+        android:id="@+id/nav_ideas"
+        android:icon="@drawable/baseline_tips_and_updates_black_24dp"
+        android:title="Ideas"/>
+    <item
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings"/>
+
+</menu>
