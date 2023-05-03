@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.mkbservices.coursework.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -30,31 +34,54 @@ class RoutinesFragment : Fragment() {
         }
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val textView = view?.findViewById<TextView>(R.id.textView18_1)
+        val routines = view?.findViewById<TextView>(R.id.Routines)
+        val routinesText = view?.findViewById<TextView>(R.id.Routines_text)
+        val routinesImage = view?.findViewById<ImageView>(R.id.Routines_text)
+        val routinesFab = view?.findViewById<FloatingActionButton>(R.id.my_fab)
+        val routinesLayout = view?.findViewById<LinearLayout>(R.id.linearLayout)
+        val routinesLayout1 = view?.findViewById<LinearLayout>(R.id.linearLayout2)
+        val newtext = arguments?.getString("new_text")
+        if (newtext != null) {
+            if (textView != null) {
+                if (routines != null) {
+                    routines.visibility = View.GONE
+                }
+                if (routinesText != null) {
+                    routinesText.visibility = View.GONE
+                }
+                if (routinesImage != null) {
+                    routinesImage.visibility = View.GONE
+                }
+                if (routinesFab != null) {
+                    routinesFab.visibility = View.GONE
+                }
+                if (routinesLayout != null) {
+                    routinesLayout.visibility=View.VISIBLE
+                }
+                if (routinesLayout1 != null) {
+                    routinesLayout1.visibility=View.VISIBLE
+                }
+                textView.text = newtext
+            }
+        }
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_routines, container, false)
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RoutinesFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RoutinesFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        fun newInstance(text: String): RoutinesFragment {
+            val args = Bundle()
+            args.putString("text", text)
+            val fragment = RoutinesFragment()
+            fragment.arguments = args
+            return fragment
+        }
     }
 }
