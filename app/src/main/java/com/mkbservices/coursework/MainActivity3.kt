@@ -1,17 +1,14 @@
 package com.mkbservices.coursework
 
 import android.app.AlertDialog
+import android.app.ProgressDialog
 import android.app.TimePickerDialog
 import android.content.Intent
-import android.media.Image
 import android.os.Bundle
+import android.os.Handler
 import android.text.InputType
-import android.view.Gravity
 import android.view.View
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.RelativeLayout
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -56,8 +53,17 @@ class MainActivity3 : AppCompatActivity() {
         builder.setPositiveButton("OK") { _, _ ->
             val text = input.text.toString()
             // Do something with the text, such as displaying it in a TextView
-            val textView = findViewById<TextView>(R.id.textView)
-            textView.text = text
+            val textView = findViewById<TextView>(R.id.textView7)
+            val progressDialog = ProgressDialog(this@MainActivity3)
+            progressDialog.setMessage("Creating New Routine")
+            progressDialog.setCancelable(false)
+            progressDialog.show()
+            Handler().postDelayed({
+                progressDialog.dismiss()
+            }, 2000) // Set the delay time in milliseconds
+
+
+            textView.text = "Send Notification: $text"
         }
 
         // Set up the Cancel button
