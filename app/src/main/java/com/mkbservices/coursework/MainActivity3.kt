@@ -1,12 +1,12 @@
 package com.mkbservices.coursework
 
 import android.app.AlertDialog
+import android.app.ProgressDialog
 import android.app.TimePickerDialog
 import android.content.Intent
-import android.media.Image
 import android.os.Bundle
+import android.os.Handler
 import android.text.InputType
-import android.view.Gravity
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
@@ -14,6 +14,9 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
+import fragments.RoutinesFragment
 
 
 class MainActivity3 : AppCompatActivity() {
@@ -42,6 +45,12 @@ class MainActivity3 : AppCompatActivity() {
             val intent = Intent(this, mainActivity5::class.java)
             startActivity(intent)
         }
+//        val textInput = findViewById<TextInputEditText>(R.id.textInputLayout)
+//        val text = textInput.text?.toString() ?: ""
+//        val fragment = RoutinesFragment.newInstance(text)
+//        supportFragmentManager.beginTransaction()
+//            .replace(R.id.Routines, fragment)
+//            .commit()
     }
     private fun showInputDialog() {
         val builder = AlertDialog.Builder(this)
@@ -56,8 +65,28 @@ class MainActivity3 : AppCompatActivity() {
         builder.setPositiveButton("OK") { _, _ ->
             val text = input.text.toString()
             // Do something with the text, such as displaying it in a TextView
-            val textView = findViewById<TextView>(R.id.textView)
-            textView.text = text
+            val textView = findViewById<TextView>(R.id.textView7)
+            val textView1 = findViewById<TextView>(R.id.textView7_1)
+            val imageView = findViewById<ImageView>(R.id.imageView2)
+            val progressDialog = ProgressDialog(this@MainActivity3)
+            progressDialog.setMessage("Saving text...")
+            progressDialog.setCancelable(false)
+            progressDialog.show()
+            textView1.visibility = View.VISIBLE
+            textView1.text= "Notification"
+
+            textView.text = "Send Notification: $text"
+            imageView.visibility = View.VISIBLE
+            Handler().postDelayed({
+                progressDialog.dismiss()
+            }, 2000)
+
+            val intent = Intent(this, RoutinesFragment::class.java)
+            val textInputLayout = findViewById<TextInputLayout>(R.id.textInputLayout)
+            val textInputEditText = textInputLayout.editText
+            val textInput = textInputEditText?.text.toString()
+            intent.putExtra("new_text", textInput)
+            startActivity(intent)
         }
 
         // Set up the Cancel button

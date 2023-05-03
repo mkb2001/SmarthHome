@@ -180,19 +180,68 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.623">
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="47dp"
+            android:layout_height="54dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="0dp"
+            android:paddingTop="20dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_baseline_message_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.162"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.127"
+            app:tintMode="screen" />
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="412dp"
+        android:layout_height="86dp"
+        android:background="#E1D9D9"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.623">
+        <TextView
+            android:id="@+id/textView7_1"
+            android:paddingStart="20dp"
+            android:paddingEnd="0dp"
+            android:layout_width="242dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="25dp"
+            android:gravity="center|start"
+            android:visibility="gone"
+            android:text=""
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.227"
+            tools:layout_editor_absoluteX="0dp" />
 
         <TextView
             android:id="@+id/textView7"
-            android:layout_width="wrap_content"
-            android:layout_height="67dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginRight="25dp"
-            android:gravity="center"
+            android:gravity="center|start"
+            android:paddingStart="20dp"
+            android:paddingEnd="0dp"
             android:text="No Actions? Tap below to add new Actions"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.227"
             tools:layout_editor_absoluteX="0dp" />
+
+
+
+    </LinearLayout>
     </LinearLayout>
 
     <TextView
@@ -213,11 +262,13 @@
         android:layout_width="412dp"
         android:layout_height="67dp"
         android:background="#E1D9D9"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+
         app:layout_constraintVertical_bias="0.975">
 
         <TextView

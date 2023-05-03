@@ -341,6 +341,7 @@
         android:layout_width="411dp"
         android:layout_height="63dp"
         android:background="#E1D9D9"
+
         app:layout_constraintBottom_toTopOf="@+id/linearLayout_permission"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
