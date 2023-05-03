@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.mkbservices.coursework.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -37,9 +40,33 @@ class RoutinesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val textView = view?.findViewById<TextView>(R.id.textView18_1)
+        val routines = view?.findViewById<TextView>(R.id.Routines)
+        val routinesText = view?.findViewById<TextView>(R.id.Routines_text)
+        val routinesImage = view?.findViewById<ImageView>(R.id.Routines_text)
+        val routinesFab = view?.findViewById<FloatingActionButton>(R.id.my_fab)
+        val routinesLayout = view?.findViewById<LinearLayout>(R.id.linearLayout)
+        val routinesLayout1 = view?.findViewById<LinearLayout>(R.id.linearLayout2)
         val newtext = arguments?.getString("new_text")
         if (newtext != null) {
             if (textView != null) {
+                if (routines != null) {
+                    routines.visibility = View.GONE
+                }
+                if (routinesText != null) {
+                    routinesText.visibility = View.GONE
+                }
+                if (routinesImage != null) {
+                    routinesImage.visibility = View.GONE
+                }
+                if (routinesFab != null) {
+                    routinesFab.visibility = View.GONE
+                }
+                if (routinesLayout != null) {
+                    routinesLayout.visibility=View.VISIBLE
+                }
+                if (routinesLayout1 != null) {
+                    routinesLayout1.visibility=View.VISIBLE
+                }
                 textView.text = newtext
             }
         }
